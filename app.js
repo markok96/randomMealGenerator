@@ -5,7 +5,7 @@ const apiKey = 1;
 
 function makeMeal(meal){
     const li = document.createElement('li');
-    li.classList.add('list-div');
+    li.classList.add('meal');
     const name = meal.strMeal;
     const instructions = meal.strInstructions;
     const image = meal.strMealThumb;
