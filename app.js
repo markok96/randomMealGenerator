@@ -27,12 +27,14 @@ function makeMeal(meal){
         <p class="description">
             ${instructions}
         <p>
-        <ul class="ingredients-list">
+        <div class="row">
+            <ul class="ingredients-list">
             <h2>Ingredients: </h2>
             ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
-        </ul>
-        <img src="${image}" alt="" class="meal-img">
-        <iframe width="420" height="315" src="https://www.youtube.com/embed/${video.slice(-11)}" class="video"></iframe>
+            </ul>
+            <img src="${image}" alt="" class="meal-img">
+            <iframe width="420" height="315" src="https://www.youtube.com/embed/${video.slice(-11)}" class="video"></iframe>
+        </div>
     `
     li.innerHTML = markup;
     list.appendChild(li);
