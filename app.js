@@ -3,6 +3,18 @@ const list = document.querySelector('.list');
 
 const apiKey = 1;
 
+form.addEventListener('click', (e) => {
+    const url = `https://www.themealdb.com/api/json/v1/${apiKey}/random.php`
+
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        makeMeal(data.meals[0])
+    });
+
+    e.preventDefault();
+});
+
 function makeMeal(meal){
     const li = document.createElement('li');
     li.classList.add('meal');
@@ -39,15 +51,3 @@ function makeMeal(meal){
     li.innerHTML = markup;
     list.appendChild(li);
 }
-
-form.addEventListener('click', (e) => {
-    const url = `https://www.themealdb.com/api/json/v1/${apiKey}/random.php`
-
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        makeMeal(data.meals[0])
-    });
-
-    e.preventDefault();
-});
